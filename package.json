@@ -1,0 +1,79 @@
+{
+  "type": "commonjs",
+  "name": "subtitle",
+  "version": "1.0.0",
+  "description": "Add subtitles to clip and render it with FFmpeg",
+  "main": "main.js",
+  "scripts": {
+    "dev": "nodemon index.mjs",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "keywords": [
+    "subtitle",
+    "webvtt",
+    "ffmpeg",
+    "webvtt-parser-esm"
+  ],
+  "author": "Bohdan Vovkotrub",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1",
+    "nodemon": "^3.0.2"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.1",
+    "@popperjs/core": "^2.11.8",
+    "dotenv": "^16.3.1",
+    "url": "^0.11.3",
+    "winston": "^3.11.0"
+  },
+  "build": {
+    "appId": "com.example.subtitle",
+    "productName": "Subtitle App",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "build/**/*",
+      "dist/**/*",
+      "node_modules/**/*",
+      "public/**/*",
+      "sass/**/*",
+      "logs/**/*",
+      ".env",
+      "app-screenshot.png",
+      "app-screenshot.jpg",
+      "index.html",
+      "main.js",
+      "package.json",
+      "package-lock.json",
+      "preload.js",
+      "SubtitlesApp.js",
+      "README.md",
+      "logger.js"
+    ],
+    "extraResources": [
+      {
+        "from": "public",
+        "to": "public"
+      }
+    ],
+    "mac": {
+      "target": [
+        "dmg"
+      ]
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm"
+      ]
+    },
+    "win": {
+      "target": "portable"
+    }
+  }
+}

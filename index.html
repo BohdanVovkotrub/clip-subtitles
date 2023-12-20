@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- START ElectronJS requires -->
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'sha256-n1Ka7tYKSSn6Q706uoq7IDKKvBbp6Ni+ygmpVZgBcdg=';">
+    <!-- END ElectronJS requires -->
+    <title>Subtitles</title>
+    <link rel="stylesheet" href="./public/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <script src="./public/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="./node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <link rel="stylesheet" href="./public/styles.css">
+  </head>
+  <body>
+    <div class="mx-5 my-2">
+      <div class="d-flex my-2 justify-content-center">
+        <button class="btn btn-sm btn-outline-secondary mx-2" id="reload-page">
+          <i class="fa-solid fa-broom"></i> Cleanup
+        </button>
+        <button class="btn btn-sm btn-outline-secondary mx-2" id="btn-view-my-renders" data-bs-toggle="modal" data-bs-target="#my-renders-modal">
+          <i class="fa-solid fa-bars-staggered"></i> View my renders
+        </button>
+      </div>
+      <div class="drop-area d-flex justify-content-center align-items-center" >
+        <p class="text-center display-6">Drag & Drop your file here</p>
+        <input class="d-none" type="file">
+      </div>
+      <div class="row  mx-1 subtitles-editor">
+        <div class="preview col-auto my-4 d-flex justify-content-center align-items-center"></div>
+        <div class="col my-4">
+          <div>
+            <button class="btn btn-success add-timecode">
+              <div class="d-flex justify-content-center align-items-center">
+                <i class="fa-solid fa-plus"></i>
+                <div class="mx-2">Add timecode</div>
+              </div>
+            </button>
+          </div>
+          <div class="subtitles-input pretty-scroll my-2"></div>
+        </div>
+        <div class="d-flex justify-content-center mt-3">
+          <button class="btn btn-danger btn-create-vtt mx-1">
+            <i class="fa-solid fa-asterisk is-spinner"></i> Create VTT
+          </button>
+          <button class="btn btn-danger btn-render mx-1 ">
+            <i class="fa-solid fa-asterisk is-spinner"></i> Render <span class="percentage">--%</span>
+          </button>
+        </div>
+      </div>
+
+
+
+
+      <div class="modal fade" id="my-renders-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5">My renders</h1>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="./public/index.js" type="module"></script>
+    </div>
+  </body>
+</html>

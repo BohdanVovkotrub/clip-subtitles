@@ -1,0 +1,21 @@
+{
+    "explorer.compactFolders": false,
+    "workbench.editor.wrapTabs": true,
+    "debug.console.fontSize": 14,
+    "terminal.integrated.fontSize": 14,
+    "editor.tabSize": 2,
+    "editor.minimap.enabled": false,
+
+    "liveSassCompile.settings.generateMap": false,
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/public",
+        }
+    ],
+    "liveSassCompile.settings.includeItems": [
+        "/sass/styles.scss"
+    ],
+    "liveSassCompile.settings.showOutputWindowOn": "Warning"
+}

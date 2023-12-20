@@ -1,0 +1,155 @@
+@charset "UTF-8";
+:root {
+  --scroll-width: 6px;
+  --scroll-thumb-color: red;
+}
+
+body {
+  background-color: rgb(227, 233, 236);
+}
+body .drop-area {
+  height: 150px;
+  border-radius: 10px;
+  background-color: rgb(233, 159, 190);
+  cursor: pointer;
+  border: 1px solid rgb(44, 44, 92);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+body .drop-area:hover {
+  background-color: rgb(241, 32, 84);
+  color: aqua;
+}
+body .subtitles-editor {
+  display: none;
+}
+body .subtitles-editor .preview {
+  width: 600px;
+  height: 338px;
+  background-color: black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+@media (max-width: 1400px) {
+  body .subtitles-editor .preview {
+    width: 450px;
+    height: 253px;
+  }
+}
+body .subtitles-editor .preview video {
+  height: 100%;
+}
+body .subtitles-editor:has(.preview > video) {
+  display: flex;
+}
+body .subtitles-editor .add-timecode {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+body .subtitles-editor .add-timecode svg {
+  height: 30px;
+}
+body .subtitles-editor .subtitles-input {
+  height: 50dvh;
+  width: 100%;
+}
+body .subtitles-editor .subtitles-input .cue {
+  border-radius: 20px;
+  padding: 5px;
+  margin: 5px;
+  background-color: white;
+  border: 2px solid rgba(217, 217, 221, 0);
+}
+body .subtitles-editor .subtitles-input .cue:hover {
+  border: 2px solid rgb(217, 217, 221);
+}
+body .subtitles-editor .subtitles-input .cue .timecode {
+  width: 300px;
+  border-radius: 20px;
+  background-color: rgb(247, 244, 244);
+  border: 1px solid rgba(217, 217, 221, 0);
+}
+body .subtitles-editor .subtitles-input .cue .timecode:hover {
+  border: 1px solid rgb(217, 217, 221);
+}
+body .subtitles-editor .subtitles-input .cue .remove-self {
+  width: 30px;
+  color: rgb(165, 163, 163);
+  cursor: pointer;
+}
+body .subtitles-editor .subtitles-input .cue .remove-self:hover {
+  color: rgb(119, 117, 117);
+}
+body .subtitles-editor .subtitles-input .cue .remove-self svg {
+  height: 70%;
+  padding: 30%;
+}
+body .subtitles-editor .subtitles-input .cue .cue-input {
+  height: 80px;
+  max-width: 90%;
+  font-size: larger;
+}
+body .btn-render {
+  width: 300px;
+  height: 80px;
+  font-size: 30px;
+}
+body .btn-render svg {
+  display: none;
+}
+body .btn-render .percentage {
+  display: none;
+}
+body .btn-render.is-rendering svg {
+  display: var(--fa-display, inline-block);
+}
+body .btn-render.is-rendering .percentage {
+  display: inline;
+}
+body .btn-create-vtt {
+  width: 300px;
+  height: 80px;
+  font-size: 30px;
+}
+body .btn-create-vtt svg {
+  display: none;
+}
+body .btn-create-vtt.is-rendering svg {
+  display: var(--fa-display, inline-block);
+}
+
+.pretty-scroll {
+  overflow-x: auto;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+.pretty-scroll::-webkit-scrollbar {
+  width: var(--scroll-width);
+  height: var(--scroll-width);
+}
+.pretty-scroll::-webkit-scrollbar-thumb {
+  border-radius: var(--scroll-width); /* Закругление углов полосы прокрутки */
+  background-color: gray; /* цвет полосы прокрутки */
+}
+.pretty-scroll::-webkit-scrollbar-track {
+  border-radius: var(--scroll-width);
+  background-color: rgba(0, 0, 0, 0); /* Цвет фона полосы прокрутки */
+}
+.pretty-scroll::-webkit-scrollbar-track:hover {
+  border-radius: var(--scroll-width);
+  background-color: rgba(0, 0, 0, 0); /* Цвет фона полосы прокрутки */
+}
+
+.is-spinner {
+  animation: animate 0.7s infinite linear;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
